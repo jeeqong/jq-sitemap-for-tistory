@@ -1,0 +1,11 @@
+{
+  "blog_url": "https://jeeqong.tistory.com",
+  "is_initialized": true,
+  "max_pages": 5,
+  "output_file": "sitemap.xml",
+  "selector": {
+    "link_selector": ".title",
+    "date_selector": ".date",
+    "list_item_selector": ".post-item"
+  }
+}
