@@ -1,3 +1,6 @@
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+![GitHub Actions](https://github.com/jeeqong/jq-sitemap-for-tistory/actions/workflows/deploy.yml/badge.svg)
+
 # jq-sitemap-for-tistory 🛰️
 
 **티스토리 블로그**를 위한 자동 사이트맵 생성기입니다.  
@@ -7,10 +10,11 @@
 ## 🔥 주요 기능
 
 - 티스토리 글 목록을 크롤링하여 `sitemap.xml` 자동 생성
-- 작성한 포스트의 URL을 자동 수집
+- /category 의 글목록을 크롤링함
 - 날짜 기반 정렬 및 중복 제거
-- Bing, 구글 서치콘솔 제출 가능
-- ❌ 네이버는 도메인 다를경우 제출 불가능
+- 매일 am 3:00 자동 갱신
+
+🔗 [Introduce](https://jeeqong.tistory.com/entry/tistory-sitemap-generator-intro-jq-sitemap)
 
 ---
 
@@ -18,32 +22,23 @@
 
 ### 📦 사용 방법
 
-```bash
-# 의존성 설치
-pip install -r requirements.txt
+1. 깃허브 계정 추가
+2. https://github.com/jeeqong/jq-sitemap-for-tistory 접속후 Fork
+3. Github Action 활성화
+4. config.json 수정
+5. GitHub Pages 활성화
+6. sitemap.xml 확인
 
-# 설정 파일 작성
-cp config.sample.json config.json
-# config.json 내부에 자신의 블로그 주소 입력
-```
-
-### 실행
-
-```
-python sitemap_generator.py
-```
+🔗 [설정가이드](https://jeeqong.tistory.com/entry/tistory-sitemap-generator-guide)
 
 ### ⚙️ config.json 예시
 
 ```
-{   "blog_url": "https://jeeqong.tistory.com",   "max_pages": 50 }
+{
+  "blog_url": "https://jeeqong.tistory.com",   // 블로그 주소
+  "max_pages": 10 // 리스트 페이지 갯수
+}
 ```
-
-### 📁 결과물 예시
-
-- sitemap.xml 이 프로젝트 루트에 생성됩니다.
-- 생성된 sitemap을 구글/네이버 서치콘솔에 제출하면 색인됩니다.
-- 티스토리 관리 → 플러그인 → robots.txt 설정 또는 직접 업로드 가능.
 
 ### ✅ 적용 가능한 Tistory 스킨 목록 (2025.04 기준)
 
@@ -66,16 +61,21 @@ python sitemap_generator.py
 - 스킨에 따라 class명 없이 구조만으로 분석하는 경우가 많아 스킨 구조 변경 시 다시 확인이 필요합니다.
 - `🔺 xf_Poster` 스킨은 해당스킨에 날짜가 지원되지 않아 url 만 생성합니다.
 
-### 🛠 향후 개선 예정
-
-- 자동 GitHub Pages 배포
-- 커맨드라인 UI
-- 자동 커밋 및 push 기능
-- 블로그 플랫폼 확장 (velog, brunch 등)
+---
 
 ### 🪪 라이선스
 
-MIT
+MIT License.
+`JQ SiteMap`은 이 MIT 라이선스를 따릅니다.
+
+- 누구나 자유롭게 사용, 수정, 배포할 수 있어요.
+- 상업적 이용도 가능합니다.
+
+📌 단, 꼭 지켜야 할 조건
+
+- 저작자(제작자) 정보를 삭제하거나 숨기면 안 됩니다.
+- LICENSE 파일에 포함된 원작자 정보와 저작권 고지는 유지해야 합니다.
+- 프로젝트는 “있는 그대로(as-is)” 제공되며, 문제 발생 시 제작자는 책임지지 않습니다.
 
 ---
 
